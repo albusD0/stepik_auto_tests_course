@@ -27,6 +27,7 @@ def test_put_a_number_stepik(browser, link, login, password):
     password_btn.send_keys(password)
     in_btn = browser.find_element(By.XPATH, "//button[text()='Войти']")
     in_btn.click()
+    time.sleep(5)
     text_in = browser.find_element(By.CSS_SELECTOR, "textarea")
     text_in.send_keys(math.log(int(time.time() + 3.8)))
 
