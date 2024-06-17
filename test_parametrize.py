@@ -15,7 +15,7 @@ def browser():
 
 #@pytest.fixture(scope="session")
 #def test_authorize_stepik(browser, login, password):
-@pytest.mark.parametrize('login, password', [("alvrath@gmail.com", "_ggL26-alV24")])
+@pytest.mark.parametrize('login, password', [("@gmail.com", "_")])
 @pytest.mark.parametrize('link', [('https://stepik.org/lesson/236895/step/1'), ("https://stepik.org/lesson/236896/step/1"), ("https://stepik.org/lesson/236897/step/1"), ("https://stepik.org/lesson/236898/step/1"), ("https://stepik.org/lesson/236899/step/1"), ("https://stepik.org/lesson/236903/step/1"), ("https://stepik.org/lesson/236904/step/1"), ("https://stepik.org/lesson/236905/step/1")])
 def test_put_a_number_stepik(browser, link, login, password):
     browser.get(link)
