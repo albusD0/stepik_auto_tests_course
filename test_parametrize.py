@@ -28,11 +28,12 @@ def test_put_a_number_stepik(browser, link, login, password):
     in_btn = browser.find_element(By.XPATH, "//button[text()='Войти']")
     in_btn.click()
     text_in = browser.find_element(By.CSS_SELECTOR, "textarea")
-    text_in.send_keys(math.log(int(time.time())))
+    text_in.send_keys(math.log(int(time.time() + 3.8)))
 
     # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
     submit_btn = WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.CLASS_NAME, "submit-submission")))
     #time.sleep(5)
     submit_btn.click()
+    time.sleep(5)
     message = browser.find_element(By.CLASS_NAME, "attempt-message_correct")
     assert "Correct!" in message.text
