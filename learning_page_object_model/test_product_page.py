@@ -5,3 +5,4 @@ def test_add_to_cart(browser, language):
     page = ProductPage(browser, link)
     page.open()
     page.should_add_to_cart()
+    page.solve_quiz_and_get_code()
