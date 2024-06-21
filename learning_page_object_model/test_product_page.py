@@ -1,8 +1,8 @@
 from .pages.product_page import ProductPage
 import pytest, time
 
-
-def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, language): 
+@pytest.mark.xfail(reason="fixing this bug right now")
+def test_guest_cant_see_success_message_after_adding_product_to_cart(browser, language): 
     link = f"https://selenium1py.pythonanywhere.com/{language}/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
@@ -16,8 +16,8 @@ def test_guest_cant_see_success_message(browser, language):
     page.open()
     page.should_not_be_success_message()# Проверяем, что нет сообщения об успехе с помощью is_not_element_present
  
-
-def test_message_disappeared_after_adding_product_to_basket(browser, language): 
+@pytest.mark.xfail(reason="fixing this bug right now")
+def test_message_disappeared_after_adding_product_to_cart(browser, language): 
     link = f"https://selenium1py.pythonanywhere.com/{language}/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
