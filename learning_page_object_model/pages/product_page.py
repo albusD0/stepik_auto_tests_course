@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
 import math
 
 
@@ -39,3 +39,9 @@ class ProductPage(BasePage):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+            
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Пишет 'успешно', однако, это неверно"
+       
+    def should_disappear_not_be_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Пишет 'успешно', однако, это неверно"

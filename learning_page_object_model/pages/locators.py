@@ -13,3 +13,4 @@ class ProductPageLocators():
     CART_SUM = (By.CSS_SELECTOR, ".alertinner p strong")
     PRODUCT_TITLE = (By.CSS_SELECTOR, ".product_main h1")
     PRODUCT_IN_CART_TITLE = (By.CSS_SELECTOR, "#messages .alertinner strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alertinner")
