@@ -9,3 +9,7 @@ class LoginPageLocators():
  
 class ProductPageLocators():
     CART_BTN = (By.CLASS_NAME, "btn-add-to-basket")
+    PRICE = (By.XPATH, "//article/div[1]/div[2]/p[1]")
+    CART_SUM = (By.XPATH, "//div[2]/div/div[1]/div[3]/div/p[1]/strong")
+    PRODUCT_TITLE = (By.CSS_SELECTOR, ".product_main h1")
+    PRODUCT_IN_CART_TITLE = (By.CSS_SELECTOR, "#messages .alertinner strong")

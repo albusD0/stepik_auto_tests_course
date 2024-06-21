@@ -10,6 +10,22 @@ class ProductPage(BasePage):
         cart_link = self.browser.find_element(*ProductPageLocators.CART_BTN)
         cart_link.click()
         
+    def what_price_is(self):
+        what_price = self.browser.find_element(*ProductPageLocators.PRICE)
+        return what_price.text
+    
+    def is_cart_equal_to_price(self):
+        cart_sum = self.browser.find_element(*ProductPageLocators.CART_SUM)
+        return cart_sum.text
+        
+    def should_be_product_title(self):
+        product_title = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE)
+        return product_title.text
+    
+    def should_be_product_title_in_cart(self):
+        product_in_cart_title = self.browser.find_element(*ProductPageLocators.PRODUCT_IN_CART_TITLE)
+        return product_in_cart_title.text
+        
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
