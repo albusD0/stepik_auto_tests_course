@@ -39,3 +39,7 @@ class BasePage():
         
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Отсутствует ссылка на страницу ввода логина и пароля"
+        
+    def go_to_cart_page(self):
+        link = self.browser.find_element(*BasePageLocators.CART_LINK)
+        link.click()
