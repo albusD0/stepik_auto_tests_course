@@ -45,3 +45,9 @@ class ProductPage(BasePage):
        
     def should_disappear_not_be_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Пишет 'успешно', однако, это неверно"
+
+    def check_product_names(self, name1, name2):
+        assert name1 == name2, "Название товара не совпадает"
+
+    def check_prices(self, price1, price2):
+        assert price1 == price2, "Неверная цена товара"
